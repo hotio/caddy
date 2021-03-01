@@ -1,0 +1,27 @@
+{
+  "tags": [
+    {
+      "name": "release",
+      "version": "",
+      "commit": "",
+      "upstream": "Releases",
+      "lastUpdated": ""
+    },
+    {
+      "name": "testing",
+      "version": "",
+      "commit": "",
+      "upstream": "",
+      "lastUpdated": ""
+    },
+    {
+      "name": "",
+      "version": "",
+      "commit": "",
+      "upstream": "",
+      "lastUpdated": ""
+    }
+  ],
+  "pulls": 0,
+  "stars": 0
+}
