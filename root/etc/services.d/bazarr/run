@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+umask "${UMASK}"
+
+HOME="${CONFIG_DIR}" exec s6-setuidgid hotio "${APP_DIR}/caddy" run --config "${CONFIG_DIR}/Caddyfile"

@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+umask "${UMASK}"
+
+if [[ ! -f "${CONFIG_DIR}/Caddyfile" ]]; then
+    echo "Installing default \"Caddyfile\"..."
+    cp "${APP_DIR}/Caddyfile" "${CONFIG_DIR}/Caddyfile"
+    chown hotio:hotio "${CONFIG_DIR}/Caddyfile"
+fi
