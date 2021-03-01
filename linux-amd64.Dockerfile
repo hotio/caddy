@@ -2,6 +2,8 @@ FROM ghcr.io/hotio/base@sha256:ea5ee7980a86462fd41854214858fd9cb26a0917be8d8eaf8
 
 EXPOSE 8080 8443 2019
 
+ENV CUSTOM_BUILD=""
+
 RUN apk add --no-cache nss-tools
 
 ARG VERSION

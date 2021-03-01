@@ -3,4 +3,4 @@
 
 umask "${UMASK}"
 
-HOME="${CONFIG_DIR}" exec s6-setuidgid hotio "${APP_DIR}/caddy" run --config "${CONFIG_DIR}/Caddyfile"
+HOME="${CONFIG_DIR}" exec s6-setuidgid hotio "/usr/local/bin/caddy" run --config "${CONFIG_DIR}/Caddyfile"

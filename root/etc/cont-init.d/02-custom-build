@@ -1,0 +1,19 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+set -e
+
+umask "${UMASK}"
+
+if [[ -n "${CUSTOM_BUILD}" ]]; then
+    echo "Trying to use the custom build \"${CUSTOM_BUILD}\"..."
+    builtin_version=$("${APP_DIR}/caddy" version)
+    chmod +x "${CUSTOM_BUILD}"
+    custom_version=$("${CUSTOM_BUILD}" version)
+    if [[ "${builtin_version}" != "${custom_version}" ]]; then
+        echo "There's a version mismatch, you should update your custom build!"
+    fi
+    echo "Built-in: ${builtin_version}"
+    echo "Custom:   ${custom_version}"
+    ln -sf "${CUSTOM_BUILD}" "/usr/local/bin/caddy"
+fi
