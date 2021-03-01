@@ -13,7 +13,7 @@ elif [[ ${1} == "tests" ]]; then
     echo "List installed packages..."
     docker run --rm --entrypoint="" "${2}" apk -vv info | sort
     echo "Check if app works..."
-    app_url="https://localhost:8443"
+    app_url="http://localhost:8080"
     docker run --network host -d --name service "${2}"
     currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL "${app_url}" > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     curl -fsSL "${app_url}" > /dev/null
@@ -22,7 +22,7 @@ elif [[ ${1} == "tests" ]]; then
     docker logs service
     exit ${status}
 elif [[ ${1} == "screenshot" ]]; then
-    app_url="https://localhost:8443"
+    app_url="http://localhost:8080"
     docker run --rm --network host -d --name service "${2}"
     currenttime=$(date +%s); maxtime=$((currenttime+60)); while (! curl -fsSL "${app_url}" > /dev/null) && [[ "$currenttime" -lt "$maxtime" ]]; do sleep 1; currenttime=$(date +%s); done
     docker run --rm --network host --entrypoint="" -u "$(id -u "$USER")" -v "${GITHUB_WORKSPACE}":/usr/src/app/src zenika/alpine-chrome:with-puppeteer node src/puppeteer.js

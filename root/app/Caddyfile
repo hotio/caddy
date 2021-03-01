@@ -3,7 +3,7 @@
   https_port 8443
 }
 
-localhost {
+:8080 {
   root * /app/www
   file_server
 }
