@@ -20,3 +20,11 @@ fi
 if [[ -f "${CONFIG_DIR}/fail2ban/fail2ban.sqlite3" ]]; then
     chown hotio:hotio "${CONFIG_DIR}/fail2ban/fail2ban.sqlite3"
 fi
+
+if [[ ! -f "${APP_DIR}/templates/.copied" ]]; then
+    echo "Installing default \"templates\"..."
+    rm -rf "${CONFIG_DIR}/templates"
+    cp -R "${APP_DIR}/templates" "${CONFIG_DIR}/"
+    chown -R hotio:hotio "${CONFIG_DIR}/templates"
+    touch "${APP_DIR}/templates/.copied"
+fi

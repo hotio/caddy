@@ -1,0 +1,15 @@
+overseerr.yourdomain.com {
+  log {
+    output file /config/logs/access.log
+    level WARN
+  }
+  reverse_proxy overseerr:5055
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains;"
+    X-Frame-Options "SAMEORIGIN"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin"
+    X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
+    Content-Security-Policy "default-src 'self'; connect-src 'self' https://plex.tv https://api.github.com; style-src 'self' 'unsafe-inline' https://rsms.me/inter/inter.css; script-src 'self' 'unsafe-inline'; img-src 'self' data: https://plex.tv https://assets.plex.tv https://gravatar.com https://secure.gravatar.com https://i2.wp.com https://image.tmdb.org; font-src 'self' https://rsms.me/inter/font-files/;"
+  }
+}

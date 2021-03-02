@@ -1,0 +1,15 @@
+conreq.yourdomain.com {
+  log {
+    output file /config/logs/access.log
+    level WARN
+  }
+  reverse_proxy conreq:8000
+  header {
+    Strict-Transport-Security "max-age=31536000; includeSubDomains;"
+    X-Frame-Options "SAMEORIGIN"
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin"
+    X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
+    Content-Security-Policy "default-src 'self'; connect-src 'self'; frame-src 'self' https://www.youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' https://ajax.googleapis.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' data: https://image.tmdb.org; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com;"
+  }
+}
