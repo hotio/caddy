@@ -16,3 +16,7 @@ if [[ ! -d "${CONFIG_DIR}/fail2ban" ]]; then
     cp -R "${APP_DIR}/fail2ban" "${CONFIG_DIR}/"
     chown -R hotio:hotio "${CONFIG_DIR}/fail2ban"
 fi
+
+if [[ -f "${CONFIG_DIR}/fail2ban/fail2ban.sqlite3" ]]; then
+    chown hotio:hotio "${CONFIG_DIR}/fail2ban/fail2ban.sqlite3"
+fi

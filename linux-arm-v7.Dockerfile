@@ -13,6 +13,8 @@ RUN curl -fsSL "https://github.com/caddyserver/caddy/releases/download/v${VERSIO
     rm /etc/fail2ban/jail.d/alpine-ssh.conf && \
     cp -R /etc/fail2ban "${APP_DIR}/" && \
     rm -rf /etc/fail2ban && \
-    ln -s "${CONFIG_DIR}/fail2ban" "/etc/fail2ban"
+    ln -s "${CONFIG_DIR}/fail2ban" "/etc/fail2ban" && \
+    rm -rf /var/lib/fail2ban/ && \
+    ln -s "${CONFIG_DIR}/fail2ban" "/var/lib/fail2ban"
 
 COPY root/ /
