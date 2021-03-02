@@ -1,10 +1,18 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
+set -e
+
 umask "${UMASK}"
 
 if [[ ! -f "${CONFIG_DIR}/Caddyfile" ]]; then
     echo "Installing default \"Caddyfile\"..."
     cp "${APP_DIR}/Caddyfile" "${CONFIG_DIR}/Caddyfile"
     chown hotio:hotio "${CONFIG_DIR}/Caddyfile"
+fi
+
+if [[ ! -d "${CONFIG_DIR}/fail2ban" ]]; then
+    echo "Installing default \"fail2ban\"..."
+    cp -R "${APP_DIR}/fail2ban" "${CONFIG_DIR}/"
+    chown -R hotio:hotio "${CONFIG_DIR}/fail2ban"
 fi

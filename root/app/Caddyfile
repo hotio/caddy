@@ -4,6 +4,9 @@
 }
 
 :8080 {
+  log {
+    output file /config/logs/access.log
+  }
   root * /app/www
   file_server
 }

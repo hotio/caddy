@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+umask "${UMASK}"
+
+XDG_CONFIG_HOME="${CONFIG_DIR}/config" XDG_DATA_HOME="${CONFIG_DIR}/data" HOME="${CONFIG_DIR}" \
+exec s6-setuidgid hotio "/usr/local/bin/caddy" run --config "${CONFIG_DIR}/Caddyfile"
