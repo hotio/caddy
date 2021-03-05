@@ -1,7 +1,7 @@
-[petio]
+[overseerr]
 enabled  = false
 port     = 8080,8443
-logpath  = /petio/logfile.log
+logpath  = /overseerr/overseerr.log
 banTime  = 3600
 findTime = 600
 maxretry = 3
