@@ -10,6 +10,6 @@ petio.yourdomain.com {
     X-Content-Type-Options "nosniff"
     Referrer-Policy "strict-origin"
     X-Robots-Tag "noindex, nofollow, nosnippet, noarchive"
-    Content-Security-Policy "default-src 'self'; connect-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline' https://www.youtube.com; img-src 'self' data: https://assets.fanart.tv https://image.tmdb.org https://www.themoviedb.org https://i.ytimg.com https://secure.gravatar.com https://avatars1.githubusercontent.com https://raw.githubusercontent.com https://plex.tv *.wp.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://www.youtube.com;"
+    Content-Security-Policy "default-src 'self'; connect-src 'self' https://plex.tv; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline' https://www.youtube.com; img-src 'self' data: https://assets.fanart.tv https://image.tmdb.org https://www.themoviedb.org https://i.ytimg.com https://secure.gravatar.com https://avatars1.githubusercontent.com https://raw.githubusercontent.com https://plex.tv *.wp.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://www.youtube.com;"
   }
 }
