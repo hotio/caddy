@@ -1,0 +1,3 @@
+The custom build can be obtained from the Caddy download page.
+
+Set the environment variable CUSTOM_BUILD to a file location like for example /config/modules/caddy_linux_amd64_custom, an attempt is made to start Caddy with that binary.
