@@ -1,0 +1,7 @@
+komga.yourdomain.com {
+  log {
+    output file /config/logs/access.log
+    level WARN
+  }
+  reverse_proxy komga:8080
+}
