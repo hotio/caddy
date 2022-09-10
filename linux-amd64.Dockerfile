@@ -15,3 +15,4 @@ RUN curl -fsSL "https://github.com/caddyserver/caddy/releases/download/v${VERSIO
     ln -s "${CONFIG_DIR}/fail2ban" "/etc/fail2ban"
 
 COPY root/ /
+RUN chmod -R +x /etc/cont-init.d/ /etc/services.d/
