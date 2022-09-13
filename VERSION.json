@@ -1,4 +1,6 @@
 {
   "version": "2.5.2",
-  "changelog": "https://github.com/caddyserver/caddy/compare/v2.5.1...v2.5.2"
+  "changelog": "https://github.com/caddyserver/caddy/compare/v2.5.1...v2.5.2",
+  "upstream_image": "cr.hotio.dev/hotio/base",
+  "upstream_tag": "alpine"
 }
