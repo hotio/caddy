@@ -1,5 +1,5 @@
 [caddy-4xx]
-enabled  = true
+enabled  = false
 port     = 8080,8443
 logpath  = /config/logs/access.log
 banTime  = 3600

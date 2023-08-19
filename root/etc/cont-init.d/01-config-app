@@ -28,3 +28,20 @@ if [[ ! -f "${APP_DIR}/templates/.copied" ]]; then
     chown -R hotio:hotio "${CONFIG_DIR}/templates"
     touch "${APP_DIR}/templates/.copied"
 fi
+
+if [[ ! -d "${CONFIG_DIR}/crontab" ]]; then
+    echo "Installing default \"crontab\"..."
+    cp -R "${APP_DIR}/crontab" "${CONFIG_DIR}/"
+    chown -R hotio:hotio "${CONFIG_DIR}/crontab"
+fi
+
+if [[ -f "${CONFIG_DIR}/crontab/default" ]]; then
+    echo "Loading user provided \"crontab\" to system..."
+    crontab "${CONFIG_DIR}/crontab/default"
+fi
+
+if [[ ! -d "${CONFIG_DIR}/logrotate" ]]; then
+    echo "Installing default \"logrotate\"..."
+    cp -R "${APP_DIR}/logrotate" "${CONFIG_DIR}/"
+    chown -R hotio:hotio "${CONFIG_DIR}/logrotate"
+fi
