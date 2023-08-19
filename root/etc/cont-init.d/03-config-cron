@@ -5,8 +5,11 @@ set -e
 
 umask "${UMASK}"
 
-if [[ ! -d "${CONFIG_DIR}/crontabs" ]]; then
-    echo "Creating \"${CONFIG_DIR}/crontabs\" directory..."
-    mkdir "${CONFIG_DIR}/crontabs"
-    chown hotio:hotio "${CONFIG_DIR}/crontabs"
+if [[ ! -d "${CONFIG_DIR}/crontab" ]]; then
+    echo "Installing default \"crontab\"..."
+    cp -R "${APP_DIR}/crontab" "${CONFIG_DIR}/"
+    chown -R hotio:hotio "${CONFIG_DIR}/crontab"
 fi
+
+echo "Loading user provided \"crontab\" to system..."
+crontab "${CONFIG_DIR}/crontab/default"

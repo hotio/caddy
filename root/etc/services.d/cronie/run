@@ -3,5 +3,4 @@
 
 umask "${UMASK}"
 
-SPOOL_DIR="${CONFIG_DIR}/crontabs" \
-exec crond -f
+exec crond -f -s
