@@ -45,3 +45,10 @@ if [[ ! -d "${CONFIG_DIR}/logrotate" ]]; then
     cp -R "${APP_DIR}/logrotate" "${CONFIG_DIR}/"
     chown -R hotio:hotio "${CONFIG_DIR}/logrotate"
 fi
+
+if [[ -d "${CONFIG_DIR}/logrotate" ]]; then
+    echo "Copying \"logrotate\" folder to /tmp and chown as root..."
+    rm -rf "/tmp/logrotate"
+    cp -R "${CONFIG_DIR}/logrotate" "/tmp/"
+    chown -R root:root "/tmp/logrotate"
+fi

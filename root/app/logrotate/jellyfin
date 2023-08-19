@@ -1,12 +1,14 @@
-/jellyfin/*.log {
+/jellyfin/log_*.log {
   rotate 12
   daily
   compress
   missingok
   notifempty
   postrotate
-    nfn="/jellyfin/log_$(date +%Y%m%d).log"
-    touch "$nfn"
-    ln -fs "$nfn" /jellyfin/current.log
-    chown -R hotio:hotio /jellyfin
+    cd /jellyfin
+    newlog="log_$(date +%Y%m%d).log"
+    touch "$newlog"
+    ln -sf "$newlog" "current.log"
+    chown hotio:hotio *
+  endscript
 }
