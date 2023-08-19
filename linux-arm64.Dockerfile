@@ -7,7 +7,7 @@ VOLUME ["${CONFIG_DIR}"]
 
 ENV CUSTOM_BUILD=""
 
-RUN apk add --no-cache nss-tools fail2ban
+RUN apk add --no-cache nss-tools fail2ban cronie
 
 ARG VERSION
 RUN curl -fsSL "https://github.com/caddyserver/caddy/releases/download/v${VERSION}/caddy_${VERSION}_linux_arm64.tar.gz" | tar xzf - -C "${APP_DIR}" && \
