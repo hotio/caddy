@@ -1,3 +1,3 @@
 [Definition]
-failregex   = ^.* [info][Auth]: Failed sign-in attempt from user with incorrect credentials. {"account":{"ip":"<HOST>","email":".*","password":"__REDACTED__"}}$
+failregex   = ^.* \[info\]\[Auth\]: Failed sign-in attempt from user with incorrect credentials. {"account":{"ip":"<HOST>","email":".*","password":"__REDACTED__"}}$
 ignoreregex =
