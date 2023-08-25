@@ -20,17 +20,17 @@ body {
   right: 0;
   margin: auto;
 }
-.pullio-banner {
+.caddy-banner {
   width: auto;
   height: 150px;
   display: flex;
   align-content: flex-start;
 }
-.pullio-banner img {
+.caddy-banner img {
   max-width: 100%;
   max-height: 100%;
 }
-.pullio-banner-text {
+.caddy-banner-text {
   width: max-content;
   height: max-content;
   margin-top: auto;
@@ -40,7 +40,21 @@ body {
   font-size: 30px;
   color: white;
 }
+.fof {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fof span {
+  font-size: 30px;
+  display: inline;
+  padding-right: 12px;
+  animation: type .5s alternate infinite;
+}
+@keyframes type {
+  from{box-shadow: inset -3px 0px 0px white;}
+  to{box-shadow: inset -3px 0px 0px transparent;}
+}
 </style>
-<div class="centered"><div class="pullio-banner"><img src="https://hotio.dev/img/image-logos/caddy.svg" alt="pullio"/><div class="pullio-banner-text">YAY!<br>Caddy is working.</div></div></div>
+<div class="centered"><div class="caddy-banner"><img src="caddy.svg" alt="caddy"/><div class="fof caddy-banner-text">YAY!<br><span>Caddy is working...</span></div></div></div>
 </body>
 </html>

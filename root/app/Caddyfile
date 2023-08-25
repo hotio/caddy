@@ -3,10 +3,16 @@
   https_port 8443
 }
 
+(block_world) {
+  @block not remote_ip private_ranges
+  abort @block
+}
+
 :8080 {
   log {
     output file /config/logs/access.log
   }
   root * /app/www
   file_server
+  import block_world
 }
