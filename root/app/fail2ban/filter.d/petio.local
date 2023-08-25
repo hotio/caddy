@@ -1,3 +1,0 @@
-[Definition]
-failregex   = ^.* warn: LOGIN: User not found .* - <HOST>$
-ignoreregex =

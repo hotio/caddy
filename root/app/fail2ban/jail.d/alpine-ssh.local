@@ -1,5 +1,0 @@
-[sshd]
-enabled  = false
-
-[sshd-ddos]
-enabled  = false

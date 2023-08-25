@@ -1,8 +1,0 @@
-[jellyfin]
-enabled  = false
-port     = 8080,8443
-logpath  = /jellyfin/current.log
-banTime  = 3600
-findTime = 600
-maxretry = 3
-ignoreip = jellyseerr

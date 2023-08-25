@@ -1,3 +1,0 @@
-[Definition]
-failregex   = ^.* \[warn\]\[Auth\]: Failed login attempt from user with incorrect Jellyfin credentials {"account":{"ip":"<HOST>","email":".*","password":"__REDACTED__"}}$
-ignoreregex =

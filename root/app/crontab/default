@@ -1,2 +1,0 @@
-* * * * * /bin/echo "Hello, crontab executed!" > /proc/1/fd/1 2>&1
-@reboot /bin/echo "Hello, crontab executed!" > /proc/1/fd/1 2>&1

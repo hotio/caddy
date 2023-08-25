@@ -1,3 +1,0 @@
-[Definition]
-failregex   = ^.* \[warn\]\[API\]: Failed sign-in attempt using invalid .* password {"ip":"<HOST>","email":".*"}$
-ignoreregex =
