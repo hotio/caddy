@@ -18,4 +18,3 @@ VOLUME ["${CONFIG_DIR}"]
 ENV CUSTOM_BUILD=""
 COPY --from=builder /caddy-bin "${APP_DIR}/caddy"
 COPY root/ /
-RUN chmod -R +x /etc/cont-init.d/ /etc/services.d/
