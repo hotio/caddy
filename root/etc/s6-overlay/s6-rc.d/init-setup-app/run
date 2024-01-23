@@ -7,25 +7,9 @@ echo "
 ----------------------------------------------------------------------
 ENVIRONMENT
 ----------------------------------------------------------------------
-PUID=${PUID}
-PGID=${PGID}
-UMASK=${UMASK}
-TZ=${TZ}
 CUSTOM_BUILD=${CUSTOM_BUILD}
 ----------------------------------------------------------------------
 "
-
-echo "Executing usermod..."
-mkdir "/tmp/temphome"
-usermod -d "/tmp/temphome" hotio
-usermod -o -u "${PUID}" hotio
-usermod -d "${CONFIG_DIR}" hotio
-rm -rf "/tmp/temphome"
-groupmod -o -g "${PGID}" hotio
-
-echo "Applying permissions to ${CONFIG_DIR}"
-chmod "=rwx" "${CONFIG_DIR}"
-chown hotio:hotio "${CONFIG_DIR}"
 
 if [[ ! -f "${CONFIG_DIR}/Caddyfile" ]]; then
     echo "Installing default \"Caddyfile\"..."

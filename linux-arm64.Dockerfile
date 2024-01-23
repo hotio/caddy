@@ -14,7 +14,6 @@ RUN xcaddy_version=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://ap
 
 FROM ${UPSTREAM_IMAGE}@${UPSTREAM_DIGEST_ARM64}
 EXPOSE 8080 8443
-VOLUME ["${CONFIG_DIR}"]
 ENV CUSTOM_BUILD=""
 COPY --from=builder /caddy-bin "${APP_DIR}/caddy"
 COPY root/ /
