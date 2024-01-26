@@ -1,12 +1,12 @@
 {
   "release": {
     "description": "Releases",
-    "last_updated": "2024-01-26T22:05:54.303Z",
+    "last_updated": "2024-01-26T22:33:50.572Z",
     "latest": true,
     "tags": [
       "release",
       "release-2.7.6",
-      "release-addc60b"
+      "release-9549935"
     ]
   }
 }
