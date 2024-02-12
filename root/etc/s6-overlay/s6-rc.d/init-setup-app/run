@@ -14,7 +14,7 @@ CUSTOM_BUILD=${CUSTOM_BUILD}
 if [[ ! -f "${CONFIG_DIR}/Caddyfile" ]]; then
     echo "Installing default \"Caddyfile\"..."
     cp "${APP_DIR}/Caddyfile" "${CONFIG_DIR}/Caddyfile"
-    chown hotio:hotio "${CONFIG_DIR}/Caddyfile"
+    find "${CONFIG_DIR}/Caddyfile" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
 
 ln -sf "${APP_DIR}/caddy" "/usr/local/bin/caddy"
@@ -33,4 +33,4 @@ if [[ -n "${CUSTOM_BUILD}" ]]; then
 fi
 
 "/usr/local/bin/caddy" fmt "${CONFIG_DIR}/Caddyfile" --overwrite
-chown hotio:hotio "${CONFIG_DIR}/Caddyfile"
+find "${CONFIG_DIR}/Caddyfile" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
