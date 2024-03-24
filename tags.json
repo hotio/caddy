@@ -2,13 +2,13 @@
   "release": {
     "description": "Releases",
     "hide": false,
-    "last_updated": "2024-03-05T09:39:03.000Z",
-    "last_updated_url": "https://github.com/hotio/caddy/actions/runs/8153925820",
+    "last_updated": "2024-03-24T07:53:36.000Z",
+    "last_updated_url": "https://github.com/hotio/caddy/actions/runs/8407770317",
     "latest": true,
     "tags": [
       "release",
       "release-2.7.6",
-      "release-26122a1"
+      "release-1cc0909"
     ]
   }
 }
