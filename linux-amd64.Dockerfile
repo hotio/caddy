@@ -7,7 +7,6 @@ RUN apk add --no-cache curl jq
 RUN xcaddy_version=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://api.github.com/repos/caddyserver/xcaddy/releases/latest" | jq -r .tag_name | sed s/v//g) && \
     wget -O - "https://github.com/caddyserver/xcaddy/releases/download/v${xcaddy_version}/xcaddy_${xcaddy_version}_linux_amd64.tar.gz" | tar xzf - -C "/bin" && \
     xcaddy build v${VERSION} --output /caddy-bin \
-        --with github.com/greenpau/caddy-security \
         --with github.com/mholt/caddy-ratelimit \
         --with github.com/caddy-dns/cloudflare && \
     chmod 755 "/caddy-bin"
