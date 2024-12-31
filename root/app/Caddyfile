@@ -20,7 +20,7 @@
 
 (log_settings) {
   log {
-    output file /config/logs/access.log
+    output file /config/access.log
     level WARN
   }
 }
