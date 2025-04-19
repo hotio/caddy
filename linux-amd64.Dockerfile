@@ -1,7 +1,7 @@
 ARG UPSTREAM_IMAGE
 ARG UPSTREAM_DIGEST_AMD64
 
-FROM golang:alpine as builder
+FROM golang:alpine AS builder
 ARG VERSION
 RUN apk add --no-cache curl jq
 RUN xcaddy_version=$(curl -u "${GITHUB_ACTOR}:${GITHUB_TOKEN}" -fsSL "https://api.github.com/repos/caddyserver/xcaddy/releases/latest" | jq -r .tag_name | sed s/v//g) && \
