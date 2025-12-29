@@ -1,6 +1,11 @@
 #!/command/with-contenv bash
 # shellcheck shell=bash
 
+# shellcheck source=/dev/null
+source /etc/s6-overlay/scripts/bash-functions
+
+set -e
+
 umask "${UMASK}"
 
 echo "
@@ -13,7 +18,7 @@ CUSTOM_BUILD=${CUSTOM_BUILD}
 "
 
 if [[ ! -f "${CONFIG_DIR}/Caddyfile" ]]; then
-    echo "Installing default \"Caddyfile\"..."
+    log_inf "Installing default [${CONFIG_DIR}/Caddyfile] file."
     cp "${APP_DIR}/Caddyfile" "${CONFIG_DIR}/Caddyfile"
     find "${CONFIG_DIR}/Caddyfile" -maxdepth 0 \( ! -user hotio -or ! -group hotio \) -exec chown hotio:hotio {} +
 fi
@@ -21,15 +26,13 @@ fi
 ln -sf "${APP_DIR}/caddy" "/usr/local/bin/caddy"
 
 if [[ -n "${CUSTOM_BUILD}" ]]; then
-    echo "Trying to use the custom build \"${CUSTOM_BUILD}\"..."
+    log_inf "Trying to use the custom build [${CUSTOM_BUILD}]."
     builtin_version=$("${APP_DIR}/caddy" version)
     chmod +x "${CUSTOM_BUILD}"
     custom_version=$("${CUSTOM_BUILD}" version)
     if [[ "${builtin_version}" != "${custom_version}" ]]; then
-        echo "There's a version mismatch, you should update your custom build!"
+        log_wrn "There's a version mismatch, you should update your custom build."
     fi
-    echo "Built-in: ${builtin_version}"
-    echo "Custom:   ${custom_version}"
     ln -sf "${CUSTOM_BUILD}" "/usr/local/bin/caddy"
 fi
 

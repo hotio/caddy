@@ -18,3 +18,4 @@ ARG IMAGE_STATS
 ENV IMAGE_STATS=${IMAGE_STATS} CUSTOM_BUILD="" WEBUI_PORTS="8080/tcp,8443/tcp"
 COPY --from=builder /caddy-bin "${APP_DIR}/caddy"
 COPY root/ /
+RUN find /etc/s6-overlay/s6-rc.d -name "run*" -execdir chmod +x {} +
