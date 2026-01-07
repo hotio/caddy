@@ -1,15 +1,16 @@
 {
   "release": {
     "commit_message": "Upstream image update",
+    "commit_sha": "29d501e9858ea196a639479992063d996de29561",
     "description": "Releases",
     "hide": false,
-    "last_updated": "2026-01-04T09:25:30.000Z",
-    "last_updated_url": "https://github.com/hotio/caddy/actions/runs/20690820543",
+    "last_updated": "2026-01-07T03:57:12.000Z",
+    "last_updated_url": "https://github.com/hotio/caddy/actions/runs/20770096793",
     "latest": true,
     "tags": [
       "release",
       "release-2.10.2",
-      "release-16ce587",
+      "release-29d501e",
       "release-v2",
       "release-v2.10",
       "release-v2.10.2"
